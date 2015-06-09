@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  get 'teachers/edit'
+
+  get 'teachers/update'
+
   resources :parents
+
   get 'sessions/login'
   post 'sessions/login'
 
-
   get 'sessions/logout'
-
 
   root 'sessions#login'
 
