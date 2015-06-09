@@ -1,5 +1,5 @@
 <h2> You are logged in as <%= @teacher.name %> </h2>
-<%= link_to 'Edit Profile', teachers_edit_path %>
+<%= link_to 'Edit Profile', edit_teacher_path(session[:teacher_id]) %>
 
 <h3>Listing Parents</h3>
 
