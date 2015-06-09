@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       user = Teacher.find_by_email(params[:email])
       if user && user.authenticate(params[:password])
         session[:teacher_id] = teacher.id
-        redirect_to dishes_path, notice: "Login Successul!"
+        redirect_to parents_path, notice: "Login Successul!"
       else
         flash.now[:notice] = "Invalid username/password"
       end
