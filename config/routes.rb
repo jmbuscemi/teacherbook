@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # get 'teachers/:id/edit' => 'teachers#edit'
-  # get 'teachers/edit' => 'teachers#edit'
-  # patch 'teachers/:id' => 'teachers#update'
   resources :teachers
   resources :parents
 
