@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :parents
   get 'sessions/login'
   post 'sessions/login'
 
