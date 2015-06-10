@@ -30,6 +30,7 @@ class ParentsController < ApplicationController
   # POST /parents.json
   def create
     @parent = Parent.new(parent_params)
+    @parent.teacher_id = session[:teacher_id]
       if @parent.save
         redirect_to parents_path, notice: 'Parent was successfully created.'
       else
@@ -40,11 +41,11 @@ class ParentsController < ApplicationController
   # PATCH/PUT /parents/1
   # PATCH/PUT /parents/1.json
   def update
-      if @parent.update(parent_params)
-        redirect_to parents_path, notice: 'Parent was successfully updated.'
-      else
-        render :edit
-      end
+    if @parent.update(parent_params)
+      redirect_to parents_path, notice: 'Parent was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   # DELETE /parents/1

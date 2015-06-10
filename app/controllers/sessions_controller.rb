@@ -13,6 +13,6 @@ class SessionsController < ApplicationController
 
   def logout
     session[:teacher_id] = nil
-    redirect_to sessions_login_path, notice: "Logout Successful!"
+    redirect_to login_path, notice: "Logout Successful!"
   end
 end

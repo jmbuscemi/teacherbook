@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   resources :parents
 
   get 'sessions/login'
+  get 'login' => 'sessions#login'
+
   post 'sessions/login'
+  post 'login' => 'sessions#login'
 
   get 'sessions/logout'
+  get 'logout' => 'sessions#logout'
 
   root 'sessions#login'
 

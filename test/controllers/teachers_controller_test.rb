@@ -11,9 +11,9 @@ class TeachersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get update" do
-    get :update, id: @teacher
-    assert_redirected_to parents_path
-  end
+  # test "should get update" do
+  #   get :update, id: @teacher
+  #   assert_redirected_to parents_path
+  # end
 
 end

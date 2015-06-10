@@ -8,7 +8,7 @@ class SessionsControllerTest < ActionController::TestCase
 
   test "should get logout" do
     get :logout
-    assert_redirected_to sessions_login_path
+    assert_redirected_to login_path
   end
 
 end
