@@ -5,6 +5,7 @@ class ParentsController < ApplicationController
   # GET /parents
   # GET /parents.json
   def index
+    @parents = Parent.all
     @teacher = Teacher.find_by_id(session[:teacher_id])
   end
 
@@ -29,40 +30,28 @@ class ParentsController < ApplicationController
   # POST /parents.json
   def create
     @parent = Parent.new(parent_params)
-
-    respond_to do |format|
       if @parent.save
-        format.html { redirect_to @parent, notice: 'Parent was successfully created.' }
-        format.json { render :show, status: :created, location: @parent }
+        redirect_to parents_path, notice: 'Parent was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @parent.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /parents/1
   # PATCH/PUT /parents/1.json
   def update
-    respond_to do |format|
       if @parent.update(parent_params)
-        format.html { redirect_to @parent, notice: 'Parent was successfully updated.' }
-        format.json { render :show, status: :ok, location: @parent }
+        redirect_to parents_path, notice: 'Parent was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @parent.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
 
   # DELETE /parents/1
   # DELETE /parents/1.json
   def destroy
     @parent.destroy
-    respond_to do |format|
-      format.html { redirect_to parents_url, notice: 'Parent was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to parents_url, notice: 'Parent was successfully destroyed.'
   end
 
   private

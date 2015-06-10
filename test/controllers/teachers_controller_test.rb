@@ -7,12 +7,12 @@ class TeachersControllerTest < ActionController::TestCase
     session[:teacher_id] = teacher.id
   end
   test "should get edit" do
-    get :edit
+    get :edit, id: @teacher
     assert_response :success
   end
 
   test "should get update" do
-    get :update
+    get :update, id: @teacher
     assert_redirected_to parents_path
   end
 

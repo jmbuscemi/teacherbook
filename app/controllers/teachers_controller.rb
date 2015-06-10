@@ -7,14 +7,10 @@ class TeachersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @teacher.update(teacher_params)
-        format.html { redirect_to parents_path, notice: 'Teacher was successfully updated.' }
-        format.json { render :show, status: :ok, location: @teacher }
-      else
-        format.html { render :edit }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
-      end
+    if @teacher.update(teacher_params)
+      redirect_to parents_path, notice: 'Teacher was successfully updated.'
+    else
+      render :edit
     end
   end
 
