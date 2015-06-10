@@ -13,7 +13,7 @@ class TeachersControllerTest < ActionController::TestCase
 
   test "should get update" do
     get :update
-    assert_response :success
+    assert_redirected_to parents_path
   end
 
 end
