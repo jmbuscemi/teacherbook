@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
-  # before_action :logged_in?
+  before_action :logged_in?
 
   def edit
     @teacher = Teacher.find_by_id(session[:teacher_id])
@@ -26,7 +26,7 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:name, :email, :password)
+      params.require(:teacher).permit(:name, :email, :password, :password_confirmation)
     end
 
     def logged_in?
